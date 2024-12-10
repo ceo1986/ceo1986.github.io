@@ -1,0 +1,224 @@
+:root {
+    --bs-primary: #e74c3c;
+    --bs-primary-rgb: 231, 76, 60;
+}
+
+/* Hero section styles */
+#hero {
+    min-height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 56px;
+}
+
+/* Portfolio styles */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.portfolio-item img {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: bottom 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    bottom: 0;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-wechat {
+    background-color: #07C160;  /* 微信品牌绿色 */
+    border-color: #07C160;
+    color: white;
+}
+
+.btn-wechat:hover {
+    background-color: #06ae56;
+    border-color: #06ae56;
+    color: white;
+}
+
+/* Navbar styles */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Animation styles */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #hero {
+        margin-top: 66px; /* smaller navbar height on mobile */
+    }
+    
+    .portfolio-overlay {
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+    }
+} 
+
+/* 底部导航样式 */
+.bottom-nav {
+    height: 50px;
+    border-top: 1px solid #eee;
+}
+
+.nav-link-bottom {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 8px;
+}
+
+/* 左侧电话样式 - 使用蓝色系 */
+.nav-link-bottom.phone-link {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 右侧微信样式 - 使用微信绿 */
+.nav-link-bottom.wechat-link {
+    background-color: #07C160;
+    color: white;
+}
+
+.nav-link-bottom i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* PC端微信浮标动画效果 */
+@keyframes borderBlink {
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
+}
+
+.wechat-float .btn {
+    animation: borderBlink 2s infinite;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.fade .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+} 
+
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+} 
+
+/* 常见问题样式 */
+.accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    padding: 1.25rem;
+    font-weight: 500;
+    background-color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-primary);
+    background-color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.accordion-body {
+    padding: 1.25rem;
+    color: #6c757d;
+} 
+
+.contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1030;
+}
+
+.contact-float .btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
